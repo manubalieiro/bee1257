@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int t, i, j, l, k;
+    char str[51];
+    int sum;
+    
+    scanf("%d", &t);
+    for (i = 0; i < t; i++) {
+        scanf("%d%*c", &l);
+        sum = 0;
+        for (j = 0; j < l; j++) {
+            scanf("%[^\n]%*c", str);
+            for (k = 0; str[k] != '\0'; k++) {
+                sum += str[k] - 'A' + j + k;
+            }
+        }
+        printf("%d\n", sum);
+    }
+    return 0;
+}
